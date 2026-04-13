@@ -1,56 +1,105 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Sản phẩm của tôi</title>
+<meta charset="UTF-8">
+<title>Sản phẩm của tôi</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial;
-            color: white;
-            text-align: center;
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    color: white;
+    text-align: center;
 
-            /* Ảnh nền */
-            background-image: url('https://vi.pngtree.com/free-backgrounds-photos/b%E1%BA%A3o-v%E1%BB%87-m%C3%B4i-tr%C6%B0%E1%BB%9Dng');
-            background-size: cover;
-            background-position: center;
-        }
+    background-image: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f');
+    background-size: cover;
+    background-position: center;
+}
 
-        /* Lớp làm tối nền cho dễ đọc */
-        .overlay {
-            background: rgba(0, 0, 0, 0.6);
-            min-height: 100vh;
-            padding-top: 50px;
-        }
+/* lớp nền mờ */
+.overlay {
+    background: rgba(0, 0, 0, 0.6);
+    min-height: 100vh;
+    padding-top: 80px;
+}
 
-        h1 {
-            font-size: 40px;
-        }
+/* hiệu ứng chữ chạy xuống */
+h1 {
+    font-size: 45px;
+    animation: slideDown 1s ease;
+}
 
-        p {
-            font-size: 18px;
-        }
+/* hiệu ứng mờ dần */
+.fade {
+    animation: fadeIn 2s ease;
+}
 
-        iframe {
-            border-radius: 10px;
-        }
-    </style>
+/* hiệu ứng phóng to khi hover */
+iframe {
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+iframe:hover {
+    transform: scale(1.05);
+}
+
+/* nút bấm */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: red;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: orange;
+    transform: scale(1.1);
+}
+
+/* animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+</style>
+
 </head>
 
 <body>
-    <div class="overlay">
 
-        <h1>GIỚI THIỆU SẢN PHẨM</h1>
+<div class="overlay">
 
-        <p>Video giới thiệu:</p>
+    <h1>GIỚI THIỆU SẢN PHẨM</h1>
 
-        <iframe width="560" height="315"
-        src="https://www.youtube.com/embed/ID_VIDEO">
-        </iframe>
+    <p class="fade">Video giới thiệu:</p>
 
-        <p>Cảm ơn thầy cô đã xem!</p>
+    <iframe width="560" height="315"
+    src="https://www.youtube.com/embed/ID_VIDEO">
+    </iframe>
 
-    </div>
+    <br>
+
+    <a class="button" href="#">Xem thêm</a>
+
+    <p class="fade">Cảm ơn thầy cô đã xem!</p>
+
+</div>
+
 </body>
 </html>
