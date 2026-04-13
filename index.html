@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Hệ thống pin mặt trời thông minh</title>
+<title>HỆ THỐNG PIN MẶT TRỜI THÔNG MINH</title>
 
 <style>
 body {
@@ -11,37 +11,42 @@ body {
     color: white;
     text-align: center;
 
-    background-image: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
+    background-image: url('https://pngtree.com/freebackground/solar-energy-environmental-protection-poster-background-material_1118370.html');
     background-size: cover;
     background-position: center;
 }
 
 /* nền mờ */
 .overlay {
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.6);
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: 80px;
 }
 
-/* tiêu đề phát sáng */
+/* tiêu đề bay từ trên xuống */
 h1 {
-    font-size: 45px;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
-    animation: glow 2s infinite alternate;
+    font-size: 50px;
+    color: #00ffcc;
+    text-transform: uppercase;
+    animation: slideDown 1.5s ease;
+
+    text-shadow: 0 0 10px #00ffcc, 0 0 25px #00ffcc;
 }
 
 /* chữ phụ */
 .subtitle {
-    font-size: 22px;
+    font-size: 24px;
     margin-top: 20px;
     animation: fadeIn 2s ease;
 }
 
-/* video */
+/* video to hơn */
 iframe {
-    margin-top: 20px;
-    border-radius: 12px;
+    margin-top: 30px;
+    width: 80%;
+    max-width: 900px;
+    height: 500px;
+    border-radius: 15px;
     transition: 0.4s;
 }
 
@@ -49,17 +54,18 @@ iframe:hover {
     transform: scale(1.05);
 }
 
-/* hiệu ứng glow */
-@keyframes glow {
+/* hiệu ứng */
+@keyframes slideDown {
     from {
-        text-shadow: 0 0 10px #00ffff;
+        transform: translateY(-80px);
+        opacity: 0;
     }
     to {
-        text-shadow: 0 0 25px #00ffff, 0 0 40px #00ffff;
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
-/* hiệu ứng hiện dần */
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
@@ -72,16 +78,11 @@ iframe:hover {
 
 <div class="overlay">
 
-    <!-- TIÊU ĐỀ -->
     <h1>HỆ THỐNG PIN MẶT TRỜI THÔNG MINH</h1>
 
-    <!-- CHỮ -->
-    <div class="subtitle">🎤 Video thuyết minh</div>
+    <div class="subtitle">🎤 VIDEO THUYẾT MINH</div>
 
-    <!-- VIDEO -->
-    <iframe width="560" height="315"
-    src="https://www.youtube.com/embed/ID_VIDEO">
-    </iframe>
+    <iframe src="https://www.youtube.com/embed/ID_VIDEO"></iframe>
 
 </div>
 
