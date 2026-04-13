@@ -3,18 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <title>Sản phẩm của tôi</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial;
+            color: white;
+            text-align: center;
+
+            /* Ảnh nền */
+            background-image: url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Lớp làm tối nền cho dễ đọc */
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            min-height: 100vh;
+            padding-top: 50px;
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        iframe {
+            border-radius: 10px;
+        }
+    </style>
 </head>
-<body style="text-align:center; font-family:Arial;">
 
-    <h1>GIỚI THIỆU SẢN PHẨM</h1>
+<body>
+    <div class="overlay">
 
-    <p>Video giới thiệu:</p>
+        <h1>GIỚI THIỆU SẢN PHẨM</h1>
 
-    <iframe width="300" height="200"
-    src="https://www.youtube.com/embed/ID_VIDEO">
-    </iframe>
+        <p>Video giới thiệu:</p>
 
-    <p>Cảm ơn thầy cô đã xem!</p>
+        <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/ID_VIDEO">
+        </iframe>
 
+        <p>Cảm ơn thầy cô đã xem!</p>
+
+    </div>
 </body>
 </html>
