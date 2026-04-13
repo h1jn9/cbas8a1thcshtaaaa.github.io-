@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sản phẩm của tôi</title>
+<title>Hệ thống pin mặt trời thông minh</title>
 
 <style>
 body {
@@ -11,71 +11,58 @@ body {
     color: white;
     text-align: center;
 
-    background-image: url('https://vi.pngtree.com/free-backgrounds-photos/m%C3%B4i-tr%C6%B0%E1%BB%9Dng');
+    background-image: url('https://images.unsplash.com/photo-1509395176047-4a66953fd231');
     background-size: cover;
     background-position: center;
 }
 
-/* lớp nền mờ */
+/* nền mờ */
 .overlay {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.65);
     min-height: 100vh;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
-/* hiệu ứng chữ chạy xuống */
+/* tiêu đề phát sáng */
 h1 {
     font-size: 45px;
-    animation: slideDown 1s ease;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    animation: glow 2s infinite alternate;
 }
 
-/* hiệu ứng mờ dần */
-.fade {
+/* chữ phụ */
+.subtitle {
+    font-size: 22px;
+    margin-top: 20px;
     animation: fadeIn 2s ease;
 }
 
-/* hiệu ứng phóng to khi hover */
+/* video */
 iframe {
+    margin-top: 20px;
     border-radius: 12px;
-    transition: 0.3s;
+    transition: 0.4s;
 }
 
 iframe:hover {
     transform: scale(1.05);
 }
 
-/* nút bấm */
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: red;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: 0.3s;
-}
-
-.button:hover {
-    background: orange;
-    transform: scale(1.1);
-}
-
-/* animation */
-@keyframes slideDown {
+/* hiệu ứng glow */
+@keyframes glow {
     from {
-        transform: translateY(-50px);
-        opacity: 0;
+        text-shadow: 0 0 10px #00ffff;
     }
     to {
-        transform: translateY(0);
-        opacity: 1;
+        text-shadow: 0 0 25px #00ffff, 0 0 40px #00ffff;
     }
 }
 
+/* hiệu ứng hiện dần */
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
 </style>
 
@@ -85,19 +72,16 @@ iframe:hover {
 
 <div class="overlay">
 
-    <h1>GIỚI THIỆU SẢN PHẨM</h1>
+    <!-- TIÊU ĐỀ -->
+    <h1>HỆ THỐNG PIN MẶT TRỜI THÔNG MINH</h1>
 
-    <p class="fade">Video giới thiệu:</p>
+    <!-- CHỮ -->
+    <div class="subtitle">🎤 Video thuyết minh</div>
 
+    <!-- VIDEO -->
     <iframe width="560" height="315"
     src="https://www.youtube.com/embed/ID_VIDEO">
     </iframe>
-
-    <br>
-
-    <a class="button" href="#">Xem thêm</a>
-
-    <p class="fade">Cảm ơn thầy cô đã xem!</p>
 
 </div>
 
