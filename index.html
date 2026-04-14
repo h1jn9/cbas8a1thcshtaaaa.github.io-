@@ -1,90 +1,111 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>HỆ THỐNG PIN MẶT TRỜI THÔNG MINH</title>
+:root {
+    --bg: #050505;
+    --accent: #ffffff;
+    --muted: #888;
+    --border: rgba(255,255,255,0.08);
+    --glass: rgba(255,255,255,0.03);
+}
 
-<style>
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
 body {
-    margin: 0;
-    font-family: Arial;
-    color: white;
-    text-align: center;
-
-    background-image: url('https://pngtree.com/freebackground/solar-energy-environmental-protection-poster-background-material_1118370.html');
-    background-size: cover;
-    background-position: center;
-}
-
-/* nền mờ */
-.overlay {
-    background: rgba(0, 0, 0, 0.6);
+    background: var(--bg);
+    color: var(--accent);
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
-    padding-top: 80px;
+    padding: 3rem 1.5rem;
 }
 
-/* tiêu đề bay từ trên xuống */
+.main-stage {
+    max-width: 880px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 2rem;
+}
+
+header {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 h1 {
-    font-size: 50px;
-    color: #00ffcc;
-    text-transform: uppercase;
-    animation: slideDown 1.5s ease;
-
-    text-shadow: 0 0 10px #00ffcc, 0 0 25px #00ffcc;
+    font-size: clamp(2.5rem, 8vw, 3.8rem);
+    font-weight: 800;
+    letter-spacing: -0.06em;
+    line-height: 0.9;
+    margin-bottom: 0.4rem;
 }
 
-/* chữ phụ */
 .subtitle {
-    font-size: 24px;
-    margin-top: 20px;
-    animation: fadeIn 2s ease;
+    font-size: 1.15rem;
+    color: var(--muted);
+    font-weight: 400;
+    letter-spacing: -0.01em;
 }
 
-/* video to hơn */
-iframe {
-    margin-top: 30px;
-    width: 80%;
-    max-width: 900px;
-    height: 500px;
-    border-radius: 15px;
-    transition: 0.4s;
+.viewport {
+    position: relative;
+    background: #000;
+    border-radius: 32px;
+    padding: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.9), 
+                inset 0 1px 0 rgba(255,255,255,0.1);
+    opacity: 0;
+    transform: scale(0.99);
+    animation: zoomIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
 
-iframe:hover {
-    transform: scale(1.05);
+video {
+    width: 100%;
+    display: block;
+    border-radius: 24px;
+    aspect-ratio: 16/9;
+    background: #000;
 }
 
-/* hiệu ứng */
-@keyframes slideDown {
-    from {
-        transform: translateY(-80px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0.5rem;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+    opacity: 0;
+    animation: fadeIn 1s ease 0.5s forwards;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
+.legal {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.4;
 }
-</style>
 
-</head>
+.legal b { color: #eee; font-weight: 500; }
 
-<body>
+.pill {
+    background: var(--glass);
+    border: 1px solid var(--border);
+    padding: 0.6rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: #ccc;
+    letter-spacing: 0.02em;
+}
 
-<div class="overlay">
+@keyframes slideIn { to { opacity: 1; transform: translateY(0); } }
+@keyframes zoomIn { to { opacity: 1; transform: scale(1); } }
+@keyframes fadeIn { to { opacity: 1; } }
 
-    <h1>HỆ THỐNG PIN MẶT TRỜI THÔNG MINH</h1>
-
-    <div class="subtitle">🎤 VIDEO THUYẾT MINH</div>
-
-    <iframe src="https://www.youtube.com/embed/ID_VIDEO"></iframe>
-
-</div>
-
-</body>
-</html>
+@media (max-width: 600px) {
+    body { padding: 2rem 1rem; }
+    .main-stage { gap: 1.5rem; }
+    footer { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    h1 { font-size: 2.4rem; }
+}
